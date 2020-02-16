@@ -53,10 +53,10 @@ object stocks {
             override fun sell(stock: String, quantity: Double): Double =
                 findAll()[stock]?.times(quantity) ?: 0.0
 
-            override fun buy(stock: String, amount: Double): Double {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
-
+            override fun buy(stock: String, amount: Double): Double =
+                findAll()[stock]?.div(amount) ?: 0.0
         }
+
+        investInStockWithMinValue()(stockRepo)
     }
 }
